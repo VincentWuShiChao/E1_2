@@ -1,0 +1,50 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>后台管理系统</title>
+    <!-- Bootstrap -->
+    <link href="/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+        .row h4{
+            text-align: center;
+        }
+    </style>
+    <script type="application/javascript">
+        function submit(){
+            var url=document.getElementById("basic-url").value;
+            window.location.replace("/management?tag="+url);
+        }
+
+    </script>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <h1 style="color: #ffffff;">后台管理系统</h1>
+</nav>
+<div style="padding:20px 100px;">
+    <div class="dropdown">
+        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+            控制按钮的显示
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+            <li><a href="http://192.168.1.122:6000/management?tag=false">不显示按钮</a></li>
+            <li><a href="http://192.168.1.122:6000/management?tag=true">显示按钮</a></li>
+        </ul>
+    </div>
+    <div style="height: 100px"></div>
+    <label for="basic-url">填入可访问的URL</label>
+    <div class="input-group">
+        <span class="input-group-addon" id="basic-addon3">https://example.com/users/</span>
+        <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3">
+        <button id="submit" onclick="submit()">提交</button>
+    </div>
+</div>
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/bootstrap.min.js"></script>
+</body>
+</html>
